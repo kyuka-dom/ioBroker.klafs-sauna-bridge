@@ -1,0 +1,189 @@
+{
+	"common": {
+		"name": "klafs-sauna-bridge",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "Klafs Sauna Bridge",
+		"titleLang": {
+			"en": "Klafs Sauna Bridge",
+			"de": "Klafs Saunabrücke",
+			"ru": "Klafs Sauna Bridge",
+			"pt": "Ponte da Sauna Klafs",
+			"nl": "Klafs Saunabrug",
+			"fr": "Pont de sauna Klafs",
+			"it": "Ponte delle saune di Klafs",
+			"es": "Puente de la sauna Klafs",
+			"pl": "Most saunowy Klafs",
+			"zh-cn": "克拉夫桑拿桥"
+		},
+		"desc": {
+			"en": "Bridges the communication from the sauna to the klafs cloud and extracts the important information, which is then put into ioBroker",
+			"de": "Überbrückt die Kommunikation von der Sauna zur Klafs-Cloud und extrahiert die wichtigen Informationen, die dann in ioBroker abgelegt werden",
+			"ru": "Направляет связь от сауны к облаку клафов и извлекает важную информацию, которая затем помещается в ioBroker.",
+			"pt": "Faz a ponte da comunicação da sauna para a nuvem klafs e extrai as informações importantes, que são então colocadas no ioBroker",
+			"nl": "Overbrugt de communicatie van de sauna naar de klafswolk en extraheert de belangrijke informatie, die vervolgens in ioBroker wordt geplaatst",
+			"fr": "Relie la communication du sauna au cloud klafs et extrait les informations importantes, qui sont ensuite mises dans ioBroker",
+			"it": "Collega la comunicazione dalla sauna al cloud klafs ed estrae le informazioni importanti, che vengono quindi inserite in ioBroker",
+			"es": "Une la comunicación de la sauna a la nube de klafs y extrae la información importante, que luego se coloca en ioBroker",
+			"pl": "Łączy komunikację z sauny do chmury klafs i wydobywa ważne informacje, które są następnie umieszczane w ioBroker",
+			"zh-cn": "桥接从桑拿到 klafs 云的通信并提取重要信息，然后将其放入 ioBroker"
+		},
+		"authors": ["Dom <dom@kyuka.ch>"],
+		"keywords": ["klafs", "sauna", "bridge", "klafs sauna"],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "build/main.js",
+		"icon": "klafs-sauna-bridge.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/kyuka-dom/ioBroker.klafs-sauna-bridge/main/admin/klafs-sauna-bridge.png",
+		"readme": "https://github.com/kyuka-dom/ioBroker.klafs-sauna-bridge/blob/main/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "household",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "push",
+		"adminUI": {
+			"config": "materialize"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.22"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=5.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "15353",
+		"hostip": "192.168.1.240"
+	},
+	"objects": [
+
+	],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Whether the klafs socket server is ready",
+				"type": "boolean",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		},
+		{
+			"common": {
+				"name": "Sauna"
+			},
+			"type": "channel",
+			"_id": "sauna"
+		},
+		{
+			"_id": "sauna.targetTemperature",
+			"type": "state",
+			"common": {
+				"name": "Target temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C"
+			},
+			"native": {
+				"Name": "targetTemperature",
+				"Attribute": "temperature",
+				"Readings": true,
+				"type": "number",
+				"role": "value.temperature",
+				"unit": "°C"
+			},
+			"from": "sauna"
+		},
+		{
+			"_id": "sauna.currentTemperature",
+			"type": "state",
+			"common": {
+				"name": "Current temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C"
+			},
+			"native": {
+				"Name": "currentTemperature",
+				"Attribute": "temperature",
+				"Readings": true,
+				"type": "number",
+				"role": "value.temperature",
+				"unit": "°C"
+			},
+			"from": "sauna"
+		},
+		{
+			"_id": "sauna.ready",
+			"type": "state",
+			"common": {
+				"name": "sauna ready state",
+				"type": "boolean",
+				"role": "value",
+				"read": true,
+				"write": false
+			},
+			"native": {
+				"Name": "sauna ready state",
+				"Readings": true,
+				"type": "boolean",
+				"role": "value"
+			},
+			"from": "sauna"
+		},
+		{
+			"_id": "sauna.running",
+			"type": "state",
+			"common": {
+				"name": "sauna running state",
+				"type": "boolean",
+				"role": "value",
+				"read": true,
+				"write": false
+			},
+			"native": {
+				"Name": "sauna running state",
+				"Readings": true,
+				"type": "boolean",
+				"role": "value"
+			},
+			"from": "sauna"
+		}
+	]
+}
