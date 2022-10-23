@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "klafs-sauna-bridge",
-    "version": "0.1.1-alpha.0",
+    "version": "0.1.1-alpha.1",
     "news": {
+      "0.1.1-alpha.1": {
+        "en": "<!--\n\tPlaceholder for the next version (at the beginning of the line):\n\t### **WORK IN PROGRESS**\n-->",
+        "de": "<!--\nPlatzhalter für die nächste Version (am Anfang der Linie:)\n# *WORK IN PROGRESS*\n-->",
+        "ru": "<!--\nPlaceholder for the next version (в начале строки:)\n# *WORK В ПРОГРЕССЕ*\n-->",
+        "pt": "<!--\nPlaceholder para a próxima versão (no início da linha:)\n*TRABALHAR EM FAVOR*\n-->",
+        "nl": "<!--\nPlacehouder voor de volgende versie (in het begin van de lijn)\n♪WORK IN PROGRES ♪\n-->",
+        "fr": "<!--\nPlaceholder for the next version (at the beginning of the line:)\n*WORK IN PROGRESS*\n-->",
+        "it": "<!--\nPortaposto per la prossima versione (all'inizio della linea:)\n#\n-->",
+        "es": "<!--\nTitular para la próxima versión (al principio de la línea:)\n*WORK IN PROGRESS*\n-->",
+        "pl": "<!--\nMiejscem kolejnej wersji (na początku linii:)\nWORK IN PROGRESS* (ANG.)\n-->",
+        "uk": "<!--\nМісцевласника для наступного варіанту (на початку лінії:)\n# *ВОРК В ПРОГРЕСІ*\n-->",
+        "zh-cn": "<!--\n下文本的持有人(开始线:)\n行动*\n-->"
+      },
       "0.1.1-alpha.0": {
         "en": "<!--\n\tPlaceholder for the next version (at the beginning of the line):\n\t### **WORK IN PROGRESS**\n-->",
         "de": "<!--\nPlatzhalter für die nächste Version (am Anfang der Linie:)\n# *WORK IN PROGRESS*\n-->",
