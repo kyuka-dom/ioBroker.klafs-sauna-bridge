@@ -227,7 +227,7 @@ class KlafsSaunaBridge extends utils.Adapter {
 		};
 
 		this.socketServer.on("connection", handleConnection);
-		this.socketServer.listen(28888, () => {
+		this.socketServer.listen(28888, this.config.hostip, () => {
 			this.log.info("server listening to " + JSON.stringify(this.socketServer.address()));
 			this.setState("info.connection", true, true);
 		});

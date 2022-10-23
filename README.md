@@ -109,6 +109,7 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 
 ## Changelog
 ### 0.1.1-alpha.1 (2022-10-23)
+### **WORK IN PROGRESS**
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
