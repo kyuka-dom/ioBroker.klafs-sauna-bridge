@@ -14,7 +14,6 @@ import dns from "native-dns";
 
 import net from "net";
 
-
 class KlafsSaunaBridge extends utils.Adapter {
 	private socketServer: net.Server;
 
