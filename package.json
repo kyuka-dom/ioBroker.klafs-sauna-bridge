@@ -1,6 +1,6 @@
 {
   "name": "iobroker.klafs-sauna-bridge",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Bridges the communication from the sauna to the klafs cloud and extracts the important information, which is then put into ioBroker",
   "author": {
     "name": "Dom",
