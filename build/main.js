@@ -121,7 +121,7 @@ class KlafsSaunaBridge extends utils.Adapter {
     this.socketServer = import_net.default.createServer();
     const handleConnection = (conn) => {
       const remoteAddress = conn.remoteAddress + ":" + conn.remotePort;
-      this.log.debug("new client connection from %s" + remoteAddress);
+      this.log.debug("new client connection from " + remoteAddress);
       const onConnData = async (d) => {
         this.log.debug("connection data from " + remoteAddress + ":" + d);
         const hex = d.toString("hex");
@@ -172,7 +172,7 @@ class KlafsSaunaBridge extends utils.Adapter {
     };
     this.socketServer.on("connection", handleConnection);
     this.socketServer.listen(28888, () => {
-      this.log.info("server listening to " + this.socketServer.address());
+      this.log.info("server listening to " + JSON.stringify(this.socketServer.address()));
       this.setState("info.connection", true, true);
     });
   }
